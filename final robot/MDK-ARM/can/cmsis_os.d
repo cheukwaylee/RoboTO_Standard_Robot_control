@@ -1,9 +1,9 @@
 can\cmsis_os.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c
-can\cmsis_os.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+can\cmsis_os.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u5\Bin\..\include\string.h
 can\cmsis_os.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 can\cmsis_os.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-can\cmsis_os.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-can\cmsis_os.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+can\cmsis_os.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u5\Bin\..\include\stddef.h
+can\cmsis_os.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u5\Bin\..\include\stdint.h
 can\cmsis_os.o: ../Inc/FreeRTOSConfig.h
 can\cmsis_os.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 can\cmsis_os.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h

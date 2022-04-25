@@ -36,7 +36,7 @@ extern UART_HandleTypeDef huart1;
         (ptr)->temperate = (data)[6];                                   \
     }
 /*
-motor data,  0:chassis motor1 3508;1:chassis motor3 3508;2:chassis motor3 3508;3:chassis motor4 3508;
+motor data,  0:chassis motor1 3508;1:chassis motor2 3508;2:chassis motor3 3508;3:chassis motor4 3508;
 4:yaw gimbal motor 6020;5:pitch gimbal motor 6020;6:trigger motor 2006;*/
 static motor_measure_t motor_measures[7];
 static motor_measure_t motor_chassis[7];

@@ -1,7 +1,7 @@
 can\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/port.c
 can\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-can\port.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-can\port.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+can\port.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u5\Bin\..\include\stddef.h
+can\port.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u5\Bin\..\include\stdint.h
 can\port.o: ../Inc/FreeRTOSConfig.h
 can\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 can\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h

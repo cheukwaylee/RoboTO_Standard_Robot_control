@@ -10,7 +10,7 @@
       <TargetName>final robot</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060960::V5.06 update 7 (build 960)::.\ARMCC</pCCUsed>
+      <pCCUsed>5060528::V5.06 update 5 (build 528)::.\ARM_Compiler_5.06u5</pCCUsed>
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx,USE_HAL_DRIVER,STM32F407xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;      ../Drivers/STM32F4xx_HAL_Driver/Inc;      ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;      ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;      ../Drivers/CMSIS/Include;      ..\application;      ..\bsp\boards;      ../Middlewares/Third_Party/FreeRTOS/Source/include;      ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;      ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;      ..\application;      ..\bsp\boards;      ..\components;      ..\components\algorithm;      ..\components\controller;      ..\components\device</IncludePath>
+              <IncludePath>../Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;..\application;..\bsp\boards;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;..\application;..\bsp\boards;..\components;..\components\algorithm;..\components\controller;..\components\device;..\components\controller\GimbalControl;..\components\controller\ControlAndEstimationAlgorithms;..\components\controller\MathUtilities;..\components\controller\ControlUtilities</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -2613,6 +2613,26 @@
               <FileName>pid.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\components\controller\pid.c</FilePath>
+            </File>
+            <File>
+              <FileName>GimbalControl.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\components\controller\GimbalControl\GimbalControl.c</FilePath>
+            </File>
+            <File>
+              <FileName>ControlAndEstimationAlgorithms.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\components\controller\ControlAndEstimationAlgorithms\ControlAndEstimationAlgorithms.c</FilePath>
+            </File>
+            <File>
+              <FileName>MathUtilities.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\components\controller\MathUtilities\MathUtilities.c</FilePath>
+            </File>
+            <File>
+              <FileName>ControlUtilities.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\components\controller\ControlUtilities\ControlUtilities.c</FilePath>
             </File>
           </Files>
         </Group>

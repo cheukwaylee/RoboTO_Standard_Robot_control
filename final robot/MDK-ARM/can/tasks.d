@@ -1,9 +1,9 @@
 can\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/tasks.c
-can\tasks.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-can\tasks.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+can\tasks.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u5\Bin\..\include\stdlib.h
+can\tasks.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u5\Bin\..\include\string.h
 can\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-can\tasks.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-can\tasks.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+can\tasks.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u5\Bin\..\include\stddef.h
+can\tasks.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u5\Bin\..\include\stdint.h
 can\tasks.o: ../Inc/FreeRTOSConfig.h
 can\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 can\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h

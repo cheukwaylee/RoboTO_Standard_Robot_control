@@ -1,7 +1,7 @@
 can\freertos.o: ../Src/freertos.c
 can\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-can\freertos.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-can\freertos.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+can\freertos.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u5\Bin\..\include\stddef.h
+can\freertos.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u5\Bin\..\include\stdint.h
 can\freertos.o: ../Inc/FreeRTOSConfig.h
 can\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 can\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h

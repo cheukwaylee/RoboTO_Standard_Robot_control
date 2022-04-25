@@ -81,6 +81,9 @@ char accel_print_z[30];
 char gyro_temperature_print[30];
 char counter_gyro_print[30];
 
+// counter for the ticks of the clock
+uint32_t clock_ticks_counter = 0;
+
 
 /**
   * @brief          imu task, init bmi088, ist8310, calculate the euler angle
@@ -160,6 +163,9 @@ void INS_task(void const *pvParameters)
 		counter_gyro ++;
 		  
 		HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING);
+		
+		clock_ticks_counter++;
+		
 		osDelay(1);
 	}
 }

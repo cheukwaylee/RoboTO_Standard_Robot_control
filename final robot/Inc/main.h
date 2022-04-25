@@ -81,7 +81,7 @@ void Error_Handler(void);
 
 
 //CAN RECEIVE
-#define TURN_ON_MOTOR_SPEED_PRINT 1
+#define TURN_ON_MOTOR_SPEED_PRINT 0
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
