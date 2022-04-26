@@ -53,3 +53,4 @@ can\chassis_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 can\chassis_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 can\chassis_task.o: ..\components\device\bmi088driver.h
 can\chassis_task.o: ..\application\CAN_receive.h
+can\chassis_task.o: ..\components\controller\GimbalControl\GimbalControl.h

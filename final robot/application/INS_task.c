@@ -127,9 +127,9 @@ void INS_task(void const *pvParameters)
 		get_angle(INS_quat, &INS_angle[0], &INS_angle[1], &INS_angle[2]);
 		
 		// convert the values to degrees and correct the numerical drift
-		ins_correct_angle[0] = (INS_angle[0] + counter_gyro*0.00000113825)/(0.001454/1.185);
-		ins_correct_angle[1] = (INS_angle[1] + counter_gyro*0.00000045)/(0.001453667/1.185);
-		ins_correct_angle[2] = -(INS_angle[2] - counter_gyro*0.00000003)/(0.001419389/1.185);
+		ins_correct_angle[0] = (INS_angle[0] + counter_gyro*0.00000113825)/(0.001454*3);
+		ins_correct_angle[1] = (INS_angle[1] + counter_gyro*0.00000045)/(0.001453667*3);
+		ins_correct_angle[2] = -(INS_angle[2] - counter_gyro*0.00000003)/(0.001419389*3);
 		
 		if (TURN_ON_INS_ANGLE_PRINT == 1)
 		{

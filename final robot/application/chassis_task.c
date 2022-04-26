@@ -20,6 +20,7 @@
 #include "cmsis_os.h"
 #include "bmi088driver.h"
 #include "CAN_receive.h"
+#include "GimbalControl.h"
 
 
 
@@ -36,7 +37,7 @@ void chassis_task(void const *pvParameters){
 //	fp32 angular_velocity_control[3] = {bmi088_real_data.gyro[0],bmi088_real_data.gyro[1],bmi088_real_data.gyro[2]};	
 	while(1)
 	{
-		CAN_cmd_chassis(4*ins_correct_angle[0], 4*ins_correct_angle[0], 0, 0);	
-		osDelay(2);
+		gimbal_control_loop();
+		osDelay(1);
 	}
 }

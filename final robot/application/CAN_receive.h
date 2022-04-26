@@ -22,8 +22,8 @@
 
 #include "struct_typedef.h"
 
-#define CHASSIS_CAN hcan1
-#define GIMBAL_CAN hcan2
+#define CHASSIS_CAN hcan2
+#define GIMBAL_CAN hcan1
 
 /* CAN send and receive ID */
 typedef enum
