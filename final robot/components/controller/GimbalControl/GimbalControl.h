@@ -3,6 +3,11 @@
 
 #include <stdint.h>
 
+#define MAX_GIMBAL_CONTROL_SIGNAL_AMPLITUDE 1000			// defined in range [0,+30000]
+#define MIDDLE_YAW_ANGLE_GIMBAL 0											// angle considered as the "center point" for the yaw movement (defined in radiants)
+#define MIDDLE_PITCH_ANGLE_GIMBAL 0										// angle considered as the "center point" for the pitch movement (defined in radiants)
+
+
 /* balancing robot parameters */
 typedef struct gimbal_model_s {
 	
@@ -65,12 +70,11 @@ typedef struct gimbal_model_s {
 } gimbal_model_t;
 
 
-extern gimbal_model_t BR_gimbal;
+extern gimbal_model_t standard_gimbal;
 //extern float *state_estim;
 
 void gimbal_control_loop(void);
 void gimbal_control_init(void);
-void gimbal_state_pred(gimbal_model_t *model);
 
 
 

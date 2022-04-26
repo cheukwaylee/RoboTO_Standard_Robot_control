@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx,USE_HAL_DRIVER,STM32F407xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;..\application;..\bsp\boards;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;..\application;..\bsp\boards;..\components;..\components\algorithm;..\components\controller;..\components\device;..\components\controller\GimbalControl;..\components\controller\ControlAndEstimationAlgorithms;..\components\controller\MathUtilities;..\components\controller\ControlUtilities</IncludePath>
+              <IncludePath>../Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;..\application;..\bsp\boards;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;..\application;..\bsp\boards;..\components;..\components\algorithm;..\components\controller;..\components\device;..\components\controller\GimbalControl;..\components\controller\ControlAndEstimationAlgorithms;..\components\controller\MathUtilities;..\components\controller\ControlUtilities;..\components\controller\TemperaturePID</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -2612,7 +2612,7 @@
             <File>
               <FileName>pid.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\components\controller\pid.c</FilePath>
+              <FilePath>..\components\controller\TemperaturePID\pid.c</FilePath>
             </File>
             <File>
               <FileName>GimbalControl.c</FileName>

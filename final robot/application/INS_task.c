@@ -29,6 +29,9 @@
 #include "MahonyAHRS.h"
 #include "math.h"
 #include "stdio.h"
+#include "spi.h"
+#include "usart.h"
+#include "can.h"
 
 
 
@@ -43,14 +46,11 @@
 static void imu_temp_control(fp32 temp);
 
 
-void AHRS_init(fp32 quat[4], fp32 accel[3], fp32 mag[3]);
-void AHRS_update(fp32 quat[4], fp32 time, fp32 gyro[3], fp32 accel[3], fp32 mag[3]);
-void get_angle(fp32 quat[4], fp32 *yaw, fp32 *pitch, fp32 *roll);
-
-extern SPI_HandleTypeDef hspi1;
-extern UART_HandleTypeDef huart1;
-extern CAN_HandleTypeDef hcan1;
-extern CAN_HandleTypeDef hcan2;
+// don't need these, cause they are already defined it other files (they are global, so we can just use them)
+//SPI_HandleTypeDef hspi1;
+//UART_HandleTypeDef huart1;
+//CAN_HandleTypeDef hcan1;
+//CAN_HandleTypeDef hcan2;
 
 bmi088_real_data_t bmi088_real_data;
 ist8310_real_data_t ist8310_real_data;

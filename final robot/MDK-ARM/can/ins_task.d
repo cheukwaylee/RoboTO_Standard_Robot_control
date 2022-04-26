@@ -1,6 +1,7 @@
 can\ins_task.o: ..\application\INS_task.c
 can\ins_task.o: ..\application\INS_task.h
 can\ins_task.o: ..\application\struct_typedef.h
+can\ins_task.o: ..\components\device\bmi088driver.h
 can\ins_task.o: ../Inc/main.h
 can\ins_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 can\ins_task.o: ../Inc/stm32f4xx_hal_conf.h
@@ -53,9 +54,11 @@ can\ins_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 can\ins_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 can\ins_task.o: ..\bsp\boards\bsp_imu_pwm.h
 can\ins_task.o: ..\bsp\boards\bsp_spi.h
-can\ins_task.o: ..\components\device\bmi088driver.h
 can\ins_task.o: ..\components\device\ist8310driver.h
-can\ins_task.o: ..\components\controller\pid.h
+can\ins_task.o: ..\components\controller\TemperaturePID\pid.h
 can\ins_task.o: ..\components\algorithm\MahonyAHRS.h
 can\ins_task.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u5\Bin\..\include\math.h
 can\ins_task.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u5\Bin\..\include\stdio.h
+can\ins_task.o: ../Inc/spi.h
+can\ins_task.o: ../Inc/usart.h
+can\ins_task.o: ../Inc/can.h

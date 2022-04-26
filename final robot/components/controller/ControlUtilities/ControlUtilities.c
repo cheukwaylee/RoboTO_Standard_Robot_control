@@ -143,3 +143,10 @@ void gimbal_model_init(gimbal_model_t *model) {
 	model->smc_conv_coeff = 0.1;
 
 }
+
+
+void gimbal_state_pred(gimbal_model_t *model) {
+	
+	// ... computation of state_pred for the gimbal
+	
+}

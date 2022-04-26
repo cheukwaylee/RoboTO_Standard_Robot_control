@@ -24,6 +24,7 @@
 #ifndef INS_Task_H
 #define INS_Task_H
 #include "struct_typedef.h"
+#include "bmi088driver.h"
 
 
 #define SPI_DMA_GYRO_LENGHT       8
@@ -71,6 +72,15 @@
 #define INS_MAG_X_ADDRESS_OFFSET 0
 #define INS_MAG_Y_ADDRESS_OFFSET 1
 #define INS_MAG_Z_ADDRESS_OFFSET 2
+
+extern fp32 ins_correct_angle[3];								// board angular position measurements
+extern bmi088_real_data_t bmi088_real_data;			// board angular velocity and linear acceleration measurements
+extern uint32_t clock_ticks_counter;
+
+extern void AHRS_init(fp32 quat[4], fp32 accel[3], fp32 mag[3]);
+extern void AHRS_update(fp32 quat[4], fp32 time, fp32 gyro[3], fp32 accel[3], fp32 mag[3]);
+extern void get_angle(fp32 quat[4], fp32 *yaw, fp32 *pitch, fp32 *roll);
+
 
 /**
   * @brief          imu task, init bmi088, ist8310, calculate the euler angle

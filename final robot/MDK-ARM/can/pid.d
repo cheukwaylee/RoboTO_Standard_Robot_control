@@ -1,5 +1,5 @@
-can\pid.o: ..\components\controller\pid.c
-can\pid.o: ..\components\controller\pid.h
+can\pid.o: ..\components\controller\TemperaturePID\pid.c
+can\pid.o: ..\components\controller\TemperaturePID\pid.h
 can\pid.o: ..\application\struct_typedef.h
 can\pid.o: ../Inc/main.h
 can\pid.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h

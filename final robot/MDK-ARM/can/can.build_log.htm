@@ -22,21 +22,26 @@ Dialog DLL:      TCM.DLL V1.53.0.0
  
 <h2>Project:</h2>
 C:\Users\Francesco\Desktop\All in\Documents\Università\PoliTO\Robomaster\Code new framework\RoboTO_Standard_Robot\final robot\MDK-ARM\final robot.uvprojx
-Project File Date:  04/25/2022
+Project File Date:  04/26/2022
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 5 (build 528)', folder: 'C:\Keil_v5\ARM\ARM_Compiler_5.06u5\Bin'
 Build target 'final robot'
-compiling GimbalControl.c...
-..\components\controller\ControlUtilities\ControlUtilities.h(11): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\components\controller\GimbalControl\GimbalControl.c(35): warning:  #223-D: function "osDelay" declared implicitly
-  		osDelay(3000);					// wait 3 seconds before actually controlling the gimbal (can be better?)
-..\components\controller\GimbalControl\GimbalControl.c: 2 warnings, 0 errors
-compiling freertos.c...
+compiling INS_task.c...
+..\application\INS_task.c(225): warning:  #1-D: last line of file ends without a newline
+  }
+..\application\INS_task.c(175): warning:  #177-D: function "imu_temp_control"  was declared but never referenced
+  static void imu_temp_control(fp32 temp)
+..\application\INS_task.c(68): warning:  #177-D: variable "INS_gyro"  was declared but never referenced
+  static fp32 INS_gyro[3] = {0.0f, 0.0f, 0.0f};
+..\application\INS_task.c(69): warning:  #177-D: variable "INS_accel"  was declared but never referenced
+  static fp32 INS_accel[3] = {0.0f, 0.0f, 0.0f};
+..\application\INS_task.c(70): warning:  #177-D: variable "INS_mag"  was declared but never referenced
+  static fp32 INS_mag[3] = {0.0f, 0.0f, 0.0f};
+..\application\INS_task.c: 5 warnings, 0 errors
 linking...
-Program Size: Code=25468 RO-data=548 RW-data=252 ZI-data=20116  
-"can\can.axf" - 0 Error(s), 2 Warning(s).
+Program Size: Code=25488 RO-data=548 RW-data=252 ZI-data=20116  
+"can\can.axf" - 0 Error(s), 5 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -59,7 +64,7 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.5.0
-Build Time Elapsed:  00:00:05
+Build Time Elapsed:  00:00:04
 </pre>
 </body>
 </html>
