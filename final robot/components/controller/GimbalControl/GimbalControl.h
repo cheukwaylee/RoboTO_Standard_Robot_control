@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 
-#define MAX_GIMBAL_CONTROL_SIGNAL_AMPLITUDE 1000			// defined in range [0,+30000]
+#define MAX_GIMBAL_CONTROL_SIGNAL_AMPLITUDE 3000			// defined in range [0,+30000]
 #define MIDDLE_YAW_ANGLE_GIMBAL 0											// angle considered as the "center point" for the yaw movement (defined in radiants)
 #define MIDDLE_PITCH_ANGLE_GIMBAL 0										// angle considered as the "center point" for the pitch movement (defined in radiants)
 

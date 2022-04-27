@@ -178,27 +178,42 @@
         <Ww>
           <count>5</count>
           <WinNumber>1</WinNumber>
-          <ItemText>cmd1</ItemText>
+          <ItemText>control_signal_gimbal_yaw_value</ItemText>
         </Ww>
         <Ww>
           <count>6</count>
           <WinNumber>1</WinNumber>
-          <ItemText>cmd2</ItemText>
+          <ItemText>control_signal_gimbal_pitch_value</ItemText>
         </Ww>
         <Ww>
           <count>7</count>
           <WinNumber>1</WinNumber>
-          <ItemText>a</ItemText>
+          <ItemText>gain_LQR_control_signal_gimbal_yaw</ItemText>
         </Ww>
         <Ww>
           <count>8</count>
           <WinNumber>1</WinNumber>
-          <ItemText>a</ItemText>
+          <ItemText>gain_LQR_control_signal_gimbal_pitch</ItemText>
         </Ww>
         <Ww>
           <count>9</count>
           <WinNumber>1</WinNumber>
-          <ItemText>b</ItemText>
+          <ItemText>standard_gimbal.y[0]</ItemText>
+        </Ww>
+        <Ww>
+          <count>10</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>standard_gimbal.y[1]</ItemText>
+        </Ww>
+        <Ww>
+          <count>11</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>standard_gimbal.y[2]</ItemText>
+        </Ww>
+        <Ww>
+          <count>12</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>standard_gimbal.y[3]</ItemText>
         </Ww>
       </WatchWindow1>
       <WatchWindow2>
@@ -213,7 +228,7 @@
       </Tracepoint>
       <DebugFlag>
         <trace>0</trace>
-        <periodic>0</periodic>
+        <periodic>1</periodic>
         <aLwin>1</aLwin>
         <aCover>0</aCover>
         <aSer1>0</aSer1>

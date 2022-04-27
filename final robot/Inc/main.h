@@ -74,7 +74,7 @@ void Error_Handler(void);
 
 // TEST MACROS
 //INS TASK
-#define TURN_ON_INS_ANGLE_PRINT 0
+#define TURN_ON_INS_ANGLE_PRINT 1
 #define TURN_ON_INS_ACCEL_PRINT 0
 
 //CHASSIS TASK

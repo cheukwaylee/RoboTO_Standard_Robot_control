@@ -131,34 +131,34 @@ void INS_task(void const *pvParameters)
 		ins_correct_angle[1] = (INS_angle[1] + counter_gyro*0.00000045)/(0.001453667*3);
 		ins_correct_angle[2] = -(INS_angle[2] - counter_gyro*0.00000003)/(0.001419389*3);
 		
-		if (TURN_ON_INS_ANGLE_PRINT == 1)
-		{
-			sprintf(angle_print_x,"\r%f\n\r", ins_correct_angle[0]);  // first number alone works fine if we check 1 axe at a time
-			sprintf(angle_print_y,"%f\t", ins_correct_angle[1]);		// first number alone works fine if we check 1 axe at a time
-			sprintf(angle_print_z,"%f\t", ins_correct_angle[2]);		// first number alone works fine if we check 1 axe at a time
-			HAL_UART_Transmit(&huart1, (uint8_t *)&angle_print_x, sizeof(angle_print_x), 10);
-			HAL_UART_Transmit(&huart1, (uint8_t *)&angle_print_y, sizeof(angle_print_y), 10);
-			HAL_UART_Transmit(&huart1, (uint8_t *)&angle_print_z, sizeof(angle_print_z), 10);
-		}
-		
-		if (TURN_ON_INS_ACCEL_PRINT == 1)
-		{
-			sprintf(accel_print_x,"%f\t", bmi088_real_data.accel[0]);
-			HAL_UART_Transmit(&huart1, (uint8_t *)&accel_print_x, sizeof(accel_print_x), 10);
-			sprintf(accel_print_y,"%f\t", bmi088_real_data.accel[1]);
-			HAL_UART_Transmit(&huart1, (uint8_t *)&accel_print_y, sizeof(accel_print_y), 10);
-			sprintf(accel_print_z,"%f\t", bmi088_real_data.accel[2]);
-			HAL_UART_Transmit(&huart1, (uint8_t *)&accel_print_z, sizeof(accel_print_z), 10);
-		}
+//		if (TURN_ON_INS_ANGLE_PRINT == 1)
+//		{
+//			sprintf(angle_print_x,"\r%f\t", ins_correct_angle[0]);  // first number alone works fine if we check 1 axe at a time
+//			sprintf(angle_print_y,"%f\t", ins_correct_angle[1]);		// first number alone works fine if we check 1 axe at a time
+//			sprintf(angle_print_z,"%f\t", ins_correct_angle[2]);		// first number alone works fine if we check 1 axe at a time
+//			HAL_UART_Transmit(&huart1, (uint8_t *)&angle_print_x, sizeof(angle_print_x), 10);
+//			HAL_UART_Transmit(&huart1, (uint8_t *)&angle_print_y, sizeof(angle_print_y), 10);
+//			HAL_UART_Transmit(&huart1, (uint8_t *)&angle_print_z, sizeof(angle_print_z), 10);
+//		}
+//		
+//		if (TURN_ON_INS_ACCEL_PRINT == 1)
+//		{
+//			sprintf(accel_print_x,"%f\t", bmi088_real_data.accel[0]);
+//			HAL_UART_Transmit(&huart1, (uint8_t *)&accel_print_x, sizeof(accel_print_x), 10);
+//			sprintf(accel_print_y,"%f\t", bmi088_real_data.accel[1]);
+//			HAL_UART_Transmit(&huart1, (uint8_t *)&accel_print_y, sizeof(accel_print_y), 10);
+//			sprintf(accel_print_z,"%f\t", bmi088_real_data.accel[2]);
+//			HAL_UART_Transmit(&huart1, (uint8_t *)&accel_print_z, sizeof(accel_print_z), 10);
+//		}
 
-		if (TURN_ON_INS_ANGLE_PRINT == 1 || TURN_ON_INS_ACCEL_PRINT == 1)
-		{
-			sprintf(counter_gyro_print,"%d\t", counter_gyro);
-			HAL_UART_Transmit(&huart1,(uint8_t *) counter_gyro_print , sizeof(counter_gyro_print), 10);
-			
-			sprintf(gyro_temperature_print,"%f\r\n", gyro_temperature);
-			HAL_UART_Transmit(&huart1,(uint8_t *) gyro_temperature_print , sizeof(gyro_temperature_print), 10);
-		}
+//		if (TURN_ON_INS_ANGLE_PRINT == 1 || TURN_ON_INS_ACCEL_PRINT == 1)
+//		{
+//			sprintf(counter_gyro_print,"%d\t", counter_gyro);
+//			HAL_UART_Transmit(&huart1,(uint8_t *) counter_gyro_print , sizeof(counter_gyro_print), 10);
+//			
+//			sprintf(gyro_temperature_print,"%f\r\n", gyro_temperature);
+//			HAL_UART_Transmit(&huart1,(uint8_t *) gyro_temperature_print , sizeof(gyro_temperature_print), 10);
+//		}
 		
 		counter_gyro ++;
 		  

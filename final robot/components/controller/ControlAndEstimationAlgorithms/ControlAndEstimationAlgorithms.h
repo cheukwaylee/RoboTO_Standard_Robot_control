@@ -12,8 +12,6 @@
 #define gain_no_joystick_commands 1.5
 
 #define gain_LQR_control_signal_BR_chassis 1
-#define gain_LQR_control_signal_standard_gimbal_1 1
-#define gain_LQR_control_signal_standard_gimbal_2 1
 #define gain_wheels_from_Pos 600
 #define gain_wheels_from_Pitch 60
 

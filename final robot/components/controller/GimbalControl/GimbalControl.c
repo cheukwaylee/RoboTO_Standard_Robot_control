@@ -77,7 +77,7 @@ void gimbal_control_loop(void) {
 	standard_gimbal.control_signals[1] = legalize_control_signal(standard_gimbal.control_signals[1], MAX_GIMBAL_CONTROL_SIGNAL_AMPLITUDE);
 	
 	// send the control signals
-	CAN_cmd_gimbal(standard_gimbal.control_signals[0], standard_gimbal.control_signals[0], (int16_t) 0, (int16_t) 0);
+	//CAN_cmd_gimbal(standard_gimbal.control_signals[0], standard_gimbal.control_signals[0], (int16_t) 0, (int16_t) 0);
 	
 }
 
