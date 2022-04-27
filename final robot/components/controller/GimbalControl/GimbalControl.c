@@ -28,6 +28,13 @@ float ref_gimbal_pitch = 0;
 float control_signal_gimbal_yaw_value = 0;
 float control_signal_gimbal_pitch_value = 0;
 
+extern fp32 ins_correct_angle[3];
+extern bmi088_real_data_t bmi088_real_data;
+
+float MIDDLE_YAW_ANGLE_GIMBAL = 0;											// angle considered as the "center point" for the yaw movement (defined in radiants)
+float MIDDLE_PITCH_ANGLE_GIMBAL = 0;										// angle considered as the "center point" for the pitch movement (defined in radiants)
+float MAX_GIMBAL_YAW_CONTROL_SIGNAL_AMPLITUDE = 7000;		// defined in range [0,+30000]
+float MAX_GIMBAL_PITCH_CONTROL_SIGNAL_AMPLITUDE = 8000;	// defined in range [0,+30000]
 
 
 void gimbal_control_loop(void) {
@@ -36,7 +43,6 @@ void gimbal_control_loop(void) {
 		
 		gimbal_control_init();
 		need_to_initialize_gimbal = 0;
-		//osDelay(3000);					// wait 3 seconds before actually controlling the gimbal (can be better?)
 	}
 	
 	// take board measurements
@@ -73,11 +79,11 @@ void gimbal_control_loop(void) {
 	control_signal_gimbal_pitch_value = standard_gimbal.control_signals[1];
 	
 	// saturation of the control signals (in order to avoid possible damages)
-	standard_gimbal.control_signals[0] = legalize_control_signal(standard_gimbal.control_signals[0], MAX_GIMBAL_CONTROL_SIGNAL_AMPLITUDE);
-	standard_gimbal.control_signals[1] = legalize_control_signal(standard_gimbal.control_signals[1], MAX_GIMBAL_CONTROL_SIGNAL_AMPLITUDE);
+	standard_gimbal.control_signals[0] = legalize_control_signal(standard_gimbal.control_signals[0], MAX_GIMBAL_YAW_CONTROL_SIGNAL_AMPLITUDE);
+	standard_gimbal.control_signals[1] = legalize_control_signal(standard_gimbal.control_signals[1], MAX_GIMBAL_PITCH_CONTROL_SIGNAL_AMPLITUDE);
 	
 	// send the control signals
-	//CAN_cmd_gimbal(standard_gimbal.control_signals[0], standard_gimbal.control_signals[0], (int16_t) 0, (int16_t) 0);
+	CAN_cmd_gimbal((int16_t) standard_gimbal.control_signals[0], (int16_t) standard_gimbal.control_signals[1], (int16_t) 0, (int16_t) 0);
 	
 }
 

@@ -36,9 +36,9 @@ extern UART_HandleTypeDef huart1;
         (ptr)->temperate = (data)[6];                                   \
     }
 /*
-motor data,  0:chassis motor1 3508;1:chassis motor2 3508;2:chassis motor3 3508;3:chassis motor4 3508;
+motor data,  0:chassis motor1 3508;1:chassis motor3 3508;2:chassis motor3 3508;3:chassis motor4 3508;
 4:yaw gimbal motor 6020;5:pitch gimbal motor 6020;6:trigger motor 2006;*/
-static motor_measure_t motor_measures[7];			// motors measurements
+static motor_measure_t motor_measures[7];
 static motor_measure_t motor_chassis[7];
 
 static CAN_TxHeaderTypeDef  gimbal_tx_message;
@@ -59,6 +59,7 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
     uint8_t rx_data[8];
 
     HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &rx_header, rx_data);
+		
 
     switch (rx_header.StdId)
     {
@@ -78,7 +79,7 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 					// TEST: print speed in order to see if it is correct
 					if (TURN_ON_MOTOR_SPEED_PRINT == 1)
 					{
-						sprintf(motor_speed_print,"\t\t%d\n", motor_measures[i].speed_rpm);
+						sprintf(motor_speed_print,"\t\t%d\n\r", motor_measures[i].speed_rpm);
 						HAL_UART_Transmit(&huart1, (uint8_t *)&motor_speed_print, sizeof(motor_speed_print), 10);
 					}
 					break;
@@ -157,6 +158,7 @@ void CAN_cmd_chassis(int16_t motor1, int16_t motor2, int16_t motor3, int16_t mot
 {
     uint32_t send_mail_box;
     chassis_tx_message.StdId = CAN_CHASSIS_ALL_ID;
+		//chassis_tx_message.StdId = CAN_GIMBAL_ALL_ID;
     chassis_tx_message.IDE = CAN_ID_STD;
     chassis_tx_message.RTR = CAN_RTR_DATA;
     chassis_tx_message.DLC = 0x08;

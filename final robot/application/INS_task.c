@@ -29,9 +29,6 @@
 #include "MahonyAHRS.h"
 #include "math.h"
 #include "stdio.h"
-#include "spi.h"
-#include "usart.h"
-#include "can.h"
 
 
 
@@ -46,11 +43,14 @@
 static void imu_temp_control(fp32 temp);
 
 
-// don't need these, cause they are already defined it other files (they are global, so we can just use them)
-//SPI_HandleTypeDef hspi1;
-//UART_HandleTypeDef huart1;
-//CAN_HandleTypeDef hcan1;
-//CAN_HandleTypeDef hcan2;
+void AHRS_init(fp32 quat[4], fp32 accel[3], fp32 mag[3]);
+void AHRS_update(fp32 quat[4], fp32 time, fp32 gyro[3], fp32 accel[3], fp32 mag[3]);
+void get_angle(fp32 quat[4], fp32 *yaw, fp32 *pitch, fp32 *roll);
+
+extern SPI_HandleTypeDef hspi1;
+extern UART_HandleTypeDef huart1;
+extern CAN_HandleTypeDef hcan1;
+extern CAN_HandleTypeDef hcan2;
 
 bmi088_real_data_t bmi088_real_data;
 ist8310_real_data_t ist8310_real_data;
@@ -80,9 +80,6 @@ char accel_print_y[30];
 char accel_print_z[30];
 char gyro_temperature_print[30];
 char counter_gyro_print[30];
-
-// counter for the ticks of the clock
-uint32_t clock_ticks_counter = 0;
 
 
 /**
@@ -127,20 +124,20 @@ void INS_task(void const *pvParameters)
 		get_angle(INS_quat, &INS_angle[0], &INS_angle[1], &INS_angle[2]);
 		
 		// convert the values to degrees and correct the numerical drift
-		ins_correct_angle[0] = (INS_angle[0] + counter_gyro*0.00000113825)/(0.001454*3);
-		ins_correct_angle[1] = (INS_angle[1] + counter_gyro*0.00000045)/(0.001453667*3);
-		ins_correct_angle[2] = -(INS_angle[2] - counter_gyro*0.00000003)/(0.001419389*3);
+		ins_correct_angle[0] = (INS_angle[0] + counter_gyro*0.00000113825)/(0.001454*3); 		// /1.185
+		ins_correct_angle[1] = (INS_angle[1] + counter_gyro*0.000002)/(0.001453667*3);			// /1.185
+		ins_correct_angle[2] = -(INS_angle[2] - counter_gyro*0.00000003)/(0.001419389*3);			// /1.185
 		
 //		if (TURN_ON_INS_ANGLE_PRINT == 1)
 //		{
-//			sprintf(angle_print_x,"\r%f\t", ins_correct_angle[0]);  // first number alone works fine if we check 1 axe at a time
-//			sprintf(angle_print_y,"%f\t", ins_correct_angle[1]);		// first number alone works fine if we check 1 axe at a time
-//			sprintf(angle_print_z,"%f\t", ins_correct_angle[2]);		// first number alone works fine if we check 1 axe at a time
+//			sprintf(angle_print_x,"\r%f\n\r", ins_correct_angle[0]);  // first number alone works fine if we check 1 axe at a time
+//			sprintf(angle_print_y,"%f\n\r", ins_correct_angle[1]);		// first number alone works fine if we check 1 axe at a time
+//			sprintf(angle_print_z,"%f\n\r", ins_correct_angle[2]);		// first number alone works fine if we check 1 axe at a time
 //			HAL_UART_Transmit(&huart1, (uint8_t *)&angle_print_x, sizeof(angle_print_x), 10);
 //			HAL_UART_Transmit(&huart1, (uint8_t *)&angle_print_y, sizeof(angle_print_y), 10);
 //			HAL_UART_Transmit(&huart1, (uint8_t *)&angle_print_z, sizeof(angle_print_z), 10);
 //		}
-//		
+		
 //		if (TURN_ON_INS_ACCEL_PRINT == 1)
 //		{
 //			sprintf(accel_print_x,"%f\t", bmi088_real_data.accel[0]);
@@ -163,9 +160,6 @@ void INS_task(void const *pvParameters)
 		counter_gyro ++;
 		  
 		HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING);
-		
-		clock_ticks_counter++;
-		
 		osDelay(1);
 	}
 }

@@ -3,10 +3,6 @@
 
 #include <stdint.h>
 
-#define MAX_GIMBAL_CONTROL_SIGNAL_AMPLITUDE 3000			// defined in range [0,+30000]
-#define MIDDLE_YAW_ANGLE_GIMBAL 0											// angle considered as the "center point" for the yaw movement (defined in radiants)
-#define MIDDLE_PITCH_ANGLE_GIMBAL 0										// angle considered as the "center point" for the pitch movement (defined in radiants)
-
 
 /* balancing robot parameters */
 typedef struct gimbal_model_s {
@@ -56,7 +52,7 @@ typedef struct gimbal_model_s {
 	float ref_prev[4];
 	
 	// control signals
-	int16_t control_signals[2];		// control signals to be sent to bottom and top motor of the gimbal
+	float control_signals[2];		// control signals to be sent to bottom and top motor of the gimbal
 	
 	//SMC parameters
 	float a_smc_Pitch_1;		//value a(x) used for SMC (Sliding Mode Control) of Pitch and Pitch_dot of bottom motor

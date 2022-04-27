@@ -1,7 +1,6 @@
 can\chassis_task.o: ..\application\chassis_task.c
 can\chassis_task.o: ..\application\struct_typedef.h
 can\chassis_task.o: ..\application\INS_task.h
-can\chassis_task.o: ..\components\device\bmi088driver.h
 can\chassis_task.o: ../Inc/main.h
 can\chassis_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 can\chassis_task.o: ../Inc/stm32f4xx_hal_conf.h
@@ -52,5 +51,5 @@ can\chassis_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 can\chassis_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 can\chassis_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 can\chassis_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
+can\chassis_task.o: ..\components\device\bmi088driver.h
 can\chassis_task.o: ..\application\CAN_receive.h
-can\chassis_task.o: ..\components\controller\GimbalControl\GimbalControl.h

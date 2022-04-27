@@ -25,10 +25,6 @@
 #define CHASSIS_CAN hcan2
 #define GIMBAL_CAN hcan1
 
-
-
-
-
 /* CAN send and receive ID */
 typedef enum
 {

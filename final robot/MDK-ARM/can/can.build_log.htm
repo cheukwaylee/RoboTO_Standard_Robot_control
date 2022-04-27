@@ -21,26 +21,28 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
 Dialog DLL:      TCM.DLL V1.53.0.0
  
 <h2>Project:</h2>
-C:\Users\Francesco\Desktop\All in\Documents\Università\PoliTO\Robomaster\Code new framework\RoboTO_Standard_Robot\final robot\MDK-ARM\final robot.uvprojx
-Project File Date:  04/26/2022
+C:\Users\Francesco\Desktop\RoboTO_Standard_Robot_copia\final robot\MDK-ARM\final robot.uvprojx
+Project File Date:  04/27/2022
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 5 (build 528)', folder: 'C:\Keil_v5\ARM\ARM_Compiler_5.06u5\Bin'
 Build target 'final robot'
-compiling INS_task.c...
-..\application\INS_task.c(225): warning:  #1-D: last line of file ends without a newline
+compiling ControlAndEstimationAlgorithms.c...
+..\components\controller\ControlAndEstimationAlgorithms\ControlAndEstimationAlgorithms.c(105): warning:  #1-D: last line of file ends without a newline
   }
-..\application\INS_task.c(175): warning:  #177-D: function "imu_temp_control"  was declared but never referenced
-  static void imu_temp_control(fp32 temp)
-..\application\INS_task.c(68): warning:  #177-D: variable "INS_gyro"  was declared but never referenced
-  static fp32 INS_gyro[3] = {0.0f, 0.0f, 0.0f};
-..\application\INS_task.c(69): warning:  #177-D: variable "INS_accel"  was declared but never referenced
-  static fp32 INS_accel[3] = {0.0f, 0.0f, 0.0f};
-..\application\INS_task.c(70): warning:  #177-D: variable "INS_mag"  was declared but never referenced
-  static fp32 INS_mag[3] = {0.0f, 0.0f, 0.0f};
-..\application\INS_task.c: 5 warnings, 0 errors
+..\components\controller\ControlAndEstimationAlgorithms\ControlAndEstimationAlgorithms.c(91): warning:  #177-D: variable "i"  was declared but never referenced
+  	int i, j, k;
+..\components\controller\ControlAndEstimationAlgorithms\ControlAndEstimationAlgorithms.c(91): warning:  #177-D: variable "j"  was declared but never referenced
+  	int i, j, k;
+..\components\controller\ControlAndEstimationAlgorithms\ControlAndEstimationAlgorithms.c(91): warning:  #177-D: variable "k"  was declared but never referenced
+  	int i, j, k;
+..\components\controller\ControlAndEstimationAlgorithms\ControlAndEstimationAlgorithms.c: 4 warnings, 0 errors
+compiling GimbalControl.c...
+..\components\controller\ControlUtilities\ControlUtilities.h(13): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\components\controller\GimbalControl\GimbalControl.c: 1 warning, 0 errors
 linking...
-Program Size: Code=25180 RO-data=548 RW-data=268 ZI-data=20116  
+Program Size: Code=26468 RO-data=548 RW-data=276 ZI-data=20116  
 "can\can.axf" - 0 Error(s), 5 Warning(s).
 
 <h2>Software Packages used:</h2>
@@ -64,7 +66,7 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.5.0
-Build Time Elapsed:  00:00:03
+Build Time Elapsed:  00:00:04
 </pre>
 </body>
 </html>

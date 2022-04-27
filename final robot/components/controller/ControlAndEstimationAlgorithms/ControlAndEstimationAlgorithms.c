@@ -5,8 +5,8 @@ float BR_chassis_LQR_K[4];												// K gain of LQR for the Balancing Robot
 float BR_gimbal_LQR_K[2][4];
 float Tcc = 0.001;							//inverse of the frequency of chassis controller (1000 Hz)
 float Tgc = 0.001;
-float gain_LQR_control_signal_gimbal_yaw = 1;
-float gain_LQR_control_signal_gimbal_pitch = 1;
+float gain_LQR_control_signal_gimbal_yaw = 0.3;
+float gain_LQR_control_signal_gimbal_pitch = 0.3;
 
 
 void LQR_gain_init(int id_robot_part) {
@@ -43,14 +43,14 @@ void LQR_controller(int id_robot_part) {
 	}
 	else if (id_robot_part == STANDARD_GIMBAL) {
 		
-		float cmd1 = 0;
-		float cmd2 = 0;
+		float cmd_yaw = 0;
+		float cmd_pitch = 0;
 		for (int i = 0; i < 4; i++) {
-			cmd1 += BR_gimbal_LQR_K[0][i]*(standard_gimbal.ref[i] - standard_gimbal.state_estim[i]);
-			cmd2 += BR_gimbal_LQR_K[1][i]*(standard_gimbal.ref[i] - standard_gimbal.state_estim[i]);
+			cmd_yaw += BR_gimbal_LQR_K[0][i]*(standard_gimbal.ref[i] - standard_gimbal.state_estim[i]);
+			cmd_pitch += BR_gimbal_LQR_K[1][i]*(standard_gimbal.ref[i] - standard_gimbal.state_estim[i]);
 		}
-		standard_gimbal.control_signals[0] = (int16_t) gain_LQR_control_signal_gimbal_yaw*cmd1;
-		standard_gimbal.control_signals[1] = (int16_t) gain_LQR_control_signal_gimbal_pitch*cmd2;
+		standard_gimbal.control_signals[0] = gain_LQR_control_signal_gimbal_yaw*cmd_yaw;
+		standard_gimbal.control_signals[1] = gain_LQR_control_signal_gimbal_pitch*cmd_pitch;
 		
 	}
 	else {

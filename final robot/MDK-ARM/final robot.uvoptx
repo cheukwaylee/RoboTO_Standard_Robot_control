@@ -168,59 +168,49 @@
         <Ww>
           <count>3</count>
           <WinNumber>1</WinNumber>
-          <ItemText>standard_gimbal.control_signals[0]</ItemText>
+          <ItemText>gain_LQR_control_signal_gimbal_yaw</ItemText>
         </Ww>
         <Ww>
           <count>4</count>
           <WinNumber>1</WinNumber>
-          <ItemText>standard_gimbal.control_signals[1]</ItemText>
+          <ItemText>gain_LQR_control_signal_gimbal_pitch</ItemText>
         </Ww>
         <Ww>
           <count>5</count>
           <WinNumber>1</WinNumber>
-          <ItemText>control_signal_gimbal_yaw_value</ItemText>
+          <ItemText>MAX_GIMBAL_YAW_CONTROL_SIGNAL_AMPLITUDE</ItemText>
         </Ww>
         <Ww>
           <count>6</count>
           <WinNumber>1</WinNumber>
-          <ItemText>control_signal_gimbal_pitch_value</ItemText>
+          <ItemText>MAX_GIMBAL_PITCH_CONTROL_SIGNAL_AMPLITUDE</ItemText>
         </Ww>
         <Ww>
           <count>7</count>
           <WinNumber>1</WinNumber>
-          <ItemText>gain_LQR_control_signal_gimbal_yaw</ItemText>
+          <ItemText>control_signal_gimbal_yaw_value</ItemText>
         </Ww>
         <Ww>
           <count>8</count>
           <WinNumber>1</WinNumber>
-          <ItemText>gain_LQR_control_signal_gimbal_pitch</ItemText>
+          <ItemText>control_signal_gimbal_pitch_value</ItemText>
         </Ww>
         <Ww>
           <count>9</count>
           <WinNumber>1</WinNumber>
-          <ItemText>standard_gimbal.y[0]</ItemText>
+          <ItemText>ref_gimbal_yaw</ItemText>
         </Ww>
         <Ww>
           <count>10</count>
           <WinNumber>1</WinNumber>
-          <ItemText>standard_gimbal.y[1]</ItemText>
-        </Ww>
-        <Ww>
-          <count>11</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>standard_gimbal.y[2]</ItemText>
-        </Ww>
-        <Ww>
-          <count>12</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>standard_gimbal.y[3]</ItemText>
+          <ItemText>ref_gimbal_pitch</ItemText>
         </Ww>
       </WatchWindow1>
       <WatchWindow2>
         <Ww>
           <count>0</count>
           <WinNumber>2</WinNumber>
-          <ItemText>b</ItemText>
+          <ItemText>rx_data[0]</ItemText>
         </Ww>
       </WatchWindow2>
       <Tracepoint>
@@ -984,8 +974,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\components\controller\TemperaturePID\pid.c</PathWithFileName>
-      <FilenameWithoutPath>pid.c</FilenameWithoutPath>
+      <PathWithFileName>..\components\controller\ControlAndEstimationAlgorithms\ControlAndEstimationAlgorithms.c</PathWithFileName>
+      <FilenameWithoutPath>ControlAndEstimationAlgorithms.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -996,8 +986,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\components\controller\GimbalControl\GimbalControl.c</PathWithFileName>
-      <FilenameWithoutPath>GimbalControl.c</FilenameWithoutPath>
+      <PathWithFileName>..\components\controller\ControlUtilities\ControlUtilities.c</PathWithFileName>
+      <FilenameWithoutPath>ControlUtilities.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -1005,11 +995,11 @@
       <GroupNumber>10</GroupNumber>
       <FileNumber>55</FileNumber>
       <FileType>1</FileType>
-      <tvExp>0</tvExp>
+      <tvExp>1</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\components\controller\ControlAndEstimationAlgorithms\ControlAndEstimationAlgorithms.c</PathWithFileName>
-      <FilenameWithoutPath>ControlAndEstimationAlgorithms.c</FilenameWithoutPath>
+      <PathWithFileName>..\components\controller\GimbalControl\GimbalControl.c</PathWithFileName>
+      <FilenameWithoutPath>GimbalControl.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -1032,8 +1022,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\components\controller\ControlUtilities\ControlUtilities.c</PathWithFileName>
-      <FilenameWithoutPath>ControlUtilities.c</FilenameWithoutPath>
+      <PathWithFileName>..\components\controller\TemperaturePID\pid.c</PathWithFileName>
+      <FilenameWithoutPath>pid.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
